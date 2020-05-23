@@ -35,7 +35,7 @@ class ViewController: UIViewController {
 
     
     @objc func updateTimer() {
-        if secondsPassed < totalTime {
+        if secondsPassed <= totalTime {
             
             let percentageProgress = (Double(secondsPassed) / Double(totalTime))
             
@@ -46,6 +46,7 @@ class ViewController: UIViewController {
         } else {
             timer.invalidate()
             titleLabel.text = "Done!"
+            playSound()
         }
     }
     
